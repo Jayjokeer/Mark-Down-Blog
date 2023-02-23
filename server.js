@@ -9,6 +9,7 @@ const bodyParser =require('body-parser');
 const handlebars= require('handlebars');
 const exphbs= require('express-handlebars')
 const {allowInsecurePrototypeAccess}=require('@handlebars/allow-prototype-access')
+const methodOverride= require('method-override')
 
 const app = express();
 app.use(bodyParser.json())
@@ -18,6 +19,9 @@ app.use('/static',express.static(path.join(__dirname,'public')))
 app.use('/assets',express.static(path.join(__dirname,'public','assets')))
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())
+app.use(methodOverride('_method'))
+
+//databse connection
 mongoose.set('strictQuery', false)
 mongoose.connect('mongodb://127.0.0.1:27017/blog',{
     useNewUrlParser:true,
