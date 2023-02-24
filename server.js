@@ -1,16 +1,12 @@
 require('dotenv').config()
 const express = require('express');
-const PORT = 4000;
+const PORT =process.env.PORT || 4000;
 const mongoose=require('mongoose')
 const ejs = require('ejs')
 const path = require ('path')
-const jwt =require('jsonwebtoken')
 const bodyParser =require('body-parser');
-const handlebars= require('handlebars');
-const exphbs= require('express-handlebars')
-const {allowInsecurePrototypeAccess}=require('@handlebars/allow-prototype-access')
 const methodOverride= require('method-override')
-
+ //midlewares
 const app = express();
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
