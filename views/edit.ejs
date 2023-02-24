@@ -9,11 +9,15 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="mb-4">Edit Article</h1>
+        <font color="blue" > 
+        <h1 class="mb-4"><center>Edit Article</center></h1>
+        </font>
+        <hr size="30%">
         <form action="/articles/edit/<%= article.id %>?_method=PUT" method="POST">
             <%- include('_form')%>
         </form>
 
-    
+        <hr>
+        <h5><italic><center>--- John Inc ---</center></italic></h5>
 </body>
 </html>

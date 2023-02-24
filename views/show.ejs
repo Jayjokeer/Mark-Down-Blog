@@ -9,9 +9,13 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="mb-1"><%= article.title %></h1>
+        <font color="blue" > 
+        <center><h1 class="mb-1"><%= article.title %></h1></center>
+        <font color="blue" > 
+        <hr>
         <div class="text-muted mb-2"><%= article.createdAt %></div>
     </div>
+    <hr>
     <a href="/articles" class="btn btn-secondary">All Articles</a>
     
     <a href="/articles/edit/<%= article.id %>" class="btn btn-info">edit</a>
@@ -19,5 +23,7 @@
         <div>
             <%- article.sanitizedhtml %>
         </div>
+        <hr>
+   <h5><italic><center>--- John Inc ---</center></italic></h5>
 </body>
 </html>

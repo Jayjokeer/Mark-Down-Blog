@@ -11,12 +11,14 @@ const app = express();
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
 app.set('view engine','ejs')
-app.use('/static',express.static(path.join(__dirname,'public')))
-app.use('/assets',express.static(path.join(__dirname,'public','assets')))
+app.use(express.static(path.join(__dirname,'public')))
+app.use(express.static(path.join(__dirname,'public','assets')))
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())
 app.use(methodOverride('_method'))
-
+app.get('/css',(req,res)=>{
+    res.sendFile(path.join(__dirname,'public','style.css'))
+})
 //databse connection
 mongoose.set('strictQuery', false)
 mongoose.connect('mongodb://127.0.0.1:27017/blog',{
