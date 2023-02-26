@@ -7,7 +7,7 @@ const ArticleDB =require('../model/users')
 //homepage routes gangan
 router.get('/articles',async(req,res)=>{//this is the homepage get route to the homepage
     const article = await ArticleDB.find().sort({createdAt:'desc'})//this queries the datebase for all the articles and sorst them by descending order 
-    res.render('home',{article:article})});
+    res.render('index',{article:article})});
 
 //new article page
 router.get('/articles/new',(req,res)=>{//route to get the new article page 

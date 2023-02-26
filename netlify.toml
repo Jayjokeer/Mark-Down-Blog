@@ -1,2 +1,4 @@
 [build]
-functions="functions"
+    functions="functions"
+[dev]
+    functions="functions"
