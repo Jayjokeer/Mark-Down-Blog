@@ -6,7 +6,6 @@ const ejs = require('ejs')
 const path = require ('path')
 const bodyParser =require('body-parser');
 const methodOverride= require('method-override')
-const serverless = require('serverless-http')
  //midlewares
 const app = express();
 app.use(bodyParser.json())
@@ -32,12 +31,11 @@ mongoose.connect('mongodb://127.0.0.1:27017/blog',{
     )
     
 //routes
-app.use('/.netlify/functions/server',require('../routes/router'))
+app.use('/',require('./routes/router'))
 
 
 
 
 
-//app.listen(PORT,()=>{console.log(`app running on port ${PORT}`)})
+app.listen(PORT,()=>{console.log(`app running on port ${PORT}`)})
 
-module.exports.handler = serverless(app)

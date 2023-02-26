@@ -1,5 +1,4 @@
 node_modules
 .env
 node.exe
-# Local Netlify folder
-.netlify
+
