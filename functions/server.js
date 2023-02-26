@@ -32,7 +32,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/blog',{
     )
     
 //routes
-app.use('/.netlify/functions/server/',require('../routes/router'))
+app.use('/.netlify/functions/server',require('../routes/router'))
 
 
 
